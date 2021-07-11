@@ -1,0 +1,28 @@
+<% layout("layouts/boilerplate") -%>
+    <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Title campground" name="campground[title]" value="<%= campground.title %> ">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="text" class="form-control" id="image" placeholder="Image campground" name="campground[image]" value="<%= campground.image %> ">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" rows="3" name="campground[description]"><%= campground.description %> </textarea>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" placeholder="Location" name="campground[location]" value="<%= campground.location %> ">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" aria-label="price" name="campground[price]" value="<%= campground.price %> ">
+            <span class="input-group-text">.00</span>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary mb-3">Update Campground</button>
+        </div>
+    </form>
+    <a class="btn btn-primary mb-3" href="/campgrounds/<%= campground._id %> ">Detail Campground</a>
