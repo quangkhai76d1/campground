@@ -1,5 +1,5 @@
 <% layout( "layouts/boilerplate") -%>
-    <a class="btn btn-primary" href="/campgrounds">Back Campgrounds</a>
+    <a class="btn btn-warning" href="/campgrounds">All Campgrounds</a>
     <h1 class="py-3" style="text-align: center;">
         <%=campground.title %>
     </h1>
@@ -21,7 +21,7 @@
 
         <div class="card-body d-flex">
             <form action="/campgrounds/<%= campground._id %>?_method=DELETE " method="POST">
-                <button style="line-height: 34px;" class="btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
             </form>
             <a class="btn btn-info mx-3" href="/campgrounds/<%= campground._id %>/edit ">Edit</a>
 
